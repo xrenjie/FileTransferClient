@@ -1,6 +1,6 @@
 # FileTransferClient
  
-##A client and server program for transferring files from the client computer to the server computer
+## A client and server program for transferring files from the client computer to the server computer
 
 1. Modify src\fileclient\Server.java line 30 to set folder for received files (temporary)
 1. Build and run src\fileclient\Server.java and note the computer's LAN IP address
