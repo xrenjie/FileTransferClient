@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TransferController">
    <children>
-      <Text fx:id="filenameText" layoutX="127.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Browse for a file" textAlignment="CENTER" wrappingWidth="345.13671875">
+      <Text fx:id="filenameText" layoutX="27.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Browse for a file" textAlignment="CENTER" wrappingWidth="546.13671875">
          <font>
             <Font name="SansSerif Regular" size="23.0" />
          </font></Text>

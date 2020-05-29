@@ -7,6 +7,7 @@ public class Server implements Runnable {
     private static ServerSocket server;
     private static ServerSocket server2;
     private static Socket s;
+    public String directory;
 
 
     protected static String receiveFilename(ServerSocket server) throws Exception{
@@ -19,45 +20,6 @@ public class Server implements Runnable {
         return filename;
     }
 
-    public static void startServer() throws Exception{
-        InetAddress address = InetAddress.getLocalHost();
-        System.out.println(address);
-
-        server = new ServerSocket(4333);
-        server2 = new ServerSocket(4334);
-
-        while(true){
-            try {
-                s = server.accept();
-
-                while (true) {
-                    FileTransferProcessor ftp = new FileTransferProcessor(s);
-                    String filename = receiveFilename(server2);
-
-                    //Change filepath in quotations to set folder for received files
-                    ftp.receiveFile("T:\\New folder\\" + filename);
-                    System.out.println("Transferred 1 file");
-
-                    if(s.isClosed()){
-                        break;
-                    }
-                }
-            }catch(Exception e){e.printStackTrace();}
-        }
-
-    }
-
-    public static int stopServer() throws Exception{
-        try {
-            server.close();
-            server2.close();
-            s.close();
-            return 1;
-        }catch(Exception e){e.printStackTrace();}
-        return 0;
-    }
-
-
     public void stop(){
         try {
             server.close();
@@ -68,6 +30,7 @@ public class Server implements Runnable {
 
     @Override
     public void run() {
+        directory="T:\\";
         try {
             InetAddress address = InetAddress.getLocalHost();
             System.out.println(address);
@@ -84,7 +47,7 @@ public class Server implements Runnable {
                         String filename = receiveFilename(server2);
 
                         //Change filepath in quotations to set folder for received files
-                        ftp.receiveFile("T:\\New folder\\" + filename);
+                        ftp.receiveFile(directory +"\\"+ filename);
                         System.out.println("Transferred 1 file");
 
 
@@ -99,5 +62,8 @@ public class Server implements Runnable {
         }catch(Exception e){e.printStackTrace();}
     }
 
+    public void changeDirectory(String directory){
+        this.directory=directory;
+    }
 
 }

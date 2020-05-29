@@ -8,7 +8,7 @@
 
 <Pane maxHeight="400" maxWidth="600" minHeight="400" minWidth="600" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ServerController">
    <children>
-      <Text fx:id="filenameText" layoutX="127.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Server Started" textAlignment="CENTER" wrappingWidth="345.13671875">
+      <Text fx:id="filenameText" layoutX="127.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Server Waiting" textAlignment="CENTER" wrappingWidth="345.13671875">
          <font>
             <Font name="SansSerif Regular" size="23.0" />
          </font></Text>
@@ -21,7 +21,7 @@
             </Button>
          </children>
       </HBox>
-      <Text fx:id="successText" layoutX="260.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" textAlignment="CENTER" wrappingWidth="80.0">
+      <Text fx:id="successText" layoutX="17.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="T:/" textAlignment="CENTER" wrappingWidth="567.0">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font>

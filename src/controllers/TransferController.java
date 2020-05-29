@@ -32,17 +32,19 @@ public class TransferController {
     }
 
     @FXML protected void handleTransferButton(ActionEvent event) throws Exception{
-        client = new Client(TransferWindow.ipAddress);
-        int success = 0;
-        if(file!=null) {
-            success = client.sendFilename(file);
-            client.sendFile(file);
-        }
-        if(success==1){
-            successText.setText("Success!");
-        }else{
-            successText.setText("Unsuccessful, check connection IP");
-        }
+        try {
+            client = new Client(TransferWindow.ipAddress);
+            int success = 0;
+            if (file != null) {
+                success = client.sendFilename(file);
+                client.sendFile(file);
+            }
+            if (success == 1) {
+                successText.setText("Success!");
+            } else {
+                successText.setText("Unsuccessful, check connection IP");
+            }
+        }catch(Exception e){e.printStackTrace();}
     }
 
     @FXML protected void handleBackButton(ActionEvent event) throws Exception{
