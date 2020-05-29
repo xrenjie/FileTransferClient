@@ -1,16 +1,9 @@
 package windows;
 
-
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class TransferWindow extends Application {
@@ -30,6 +23,7 @@ public class TransferWindow extends Application {
 
         stage.setTitle("Transfer file");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
 
     }
