@@ -5,19 +5,17 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import windows.ConnectWindow;
 
-import java.awt.event.ActionEvent;
 import java.io.File;
 
 public class ServerController {
     @FXML private Button browseButton;
     @FXML private Button backButton;
-    @FXML private Text successText;
+    @FXML private Text directoryName;
     @FXML private Button startButton;
-    @FXML private Text filenameText;
+    @FXML private Text statusText;
     private Server server = new Server();
     private Thread t1;
 
@@ -39,7 +37,9 @@ public class ServerController {
             File folder = directoryChooser.showDialog((Stage) backButton.getScene().getWindow());
             if (folder != null) {
                 server.changeDirectory(folder.getAbsolutePath());
-                successText.setText(folder.getAbsolutePath());
+                directoryName.setText(folder.getAbsolutePath());
+                System.out.println(folder.getAbsolutePath());
+                System.out.println(server.directory);
             }
         }catch(Exception e){e.printStackTrace();}
     }
@@ -47,7 +47,7 @@ public class ServerController {
     public void handleStartButton(javafx.event.ActionEvent actionEvent) {
         t1 = new Thread(server);
         t1.start();
-        filenameText.setText("Server started");
+        statusText.setText("Server started");
         startButton.setStyle("visibility:hidden");
     }
 }

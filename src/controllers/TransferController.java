@@ -33,6 +33,7 @@ public class TransferController {
 
     @FXML protected void handleTransferButton(ActionEvent event) throws Exception{
         try {
+            successText.setText("Transferring");
             client = new Client(TransferWindow.ipAddress);
             int success = 0;
             if (file != null) {

@@ -30,7 +30,6 @@ public class Server implements Runnable {
 
     @Override
     public void run() {
-        directory="T:\\";
         try {
             InetAddress address = InetAddress.getLocalHost();
             System.out.println(address);
